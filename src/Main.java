@@ -9,7 +9,7 @@ public class Main {
 
     String path = startPath;
 
-    Logger logger = new Logger(startPath, log);
+    Logger logger = new Logger(startPath + "//" + log);
     Files.makeDir(path, logger);
 
     for (String d : level1Dirs) {
@@ -22,7 +22,7 @@ public class Main {
     }
     for (String f : fileList) {
       path = startPath + "//src//main//";
-      Files.makeFile(path, f, logger);
+      Files.makeFile(path + "//" + f, logger);
     }
     for (String d : resDirs) {
       path = startPath + "//res//" + d;

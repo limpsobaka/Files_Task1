@@ -19,8 +19,8 @@ public class Files {
     }
   }
 
-  public static void makeFile(String path, String fileName, Logger logger) {
-    File file = new File(path, fileName);
+  public static void makeFile(String path, Logger logger) {
+    File file = new File(path);
     try {
       if (file.createNewFile()) {
         logger.addToLog(FILE_CREATE_SUCCESS + file);
@@ -35,8 +35,8 @@ public class Files {
     }
   }
 
-  public static void writeLogFile(String path, String fileName, String text) {
-    File file = new File(path, fileName);
+  public static void writeLogFile(String path,  String text) {
+    File file = new File(path);
     try {
       if (file.createNewFile() || file.exists()) {
         try (FileWriter writer = new FileWriter(file, false)) {

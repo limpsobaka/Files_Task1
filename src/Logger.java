@@ -1,11 +1,9 @@
 public class Logger {
   private final String LOG_FILE;
-  private final String LOG_PATH;
   private StringBuilder log;
 
-  public Logger(String LOG_PATH, String LOG_FILE) {
+  public Logger(String LOG_FILE) {
     this.LOG_FILE = LOG_FILE;
-    this.LOG_PATH = LOG_PATH;
     log = new StringBuilder();
   }
 
@@ -14,6 +12,6 @@ public class Logger {
   }
 
   public void writeLogFile() {
-    Files.writeLogFile(LOG_PATH, LOG_FILE, log.toString());
+    Files.writeLogFile(LOG_FILE, log.toString());
   }
 }
